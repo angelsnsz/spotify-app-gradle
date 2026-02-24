@@ -3,6 +3,7 @@ package edu.iesam.features.songs.presentation;
 
 import edu.iesam.features.songs.data.SongDataRepository;
 import edu.iesam.features.songs.data.SongMemLocalDataSource;
+import edu.iesam.features.songs.domain.DeleteSongUseCase;
 import edu.iesam.features.songs.domain.GetSongsUseCase;
 import edu.iesam.features.songs.domain.SaveSongUseCase;
 import edu.iesam.features.songs.domain.Song;
@@ -41,5 +42,18 @@ public class SongView {
 
         ArrayList<Song> songsList = getSongsUseCase.execute();
         System.out.println(songsList);
+    }
+
+    public static void deleteSong(){
+
+        DeleteSongUseCase deleteSongUseCase =
+                new DeleteSongUseCase(
+                        new SongDataRepository(
+                                SongMemLocalDataSource.newInstance()
+                        )
+                );
+
+        deleteSongUseCase.execute("1");
+        printSongs();
     }
 }
