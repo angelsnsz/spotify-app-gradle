@@ -10,7 +10,7 @@ public class SaveAuthorUseCase {
         this.authorRepository = authorRepository;
     }
 
-    public void execute(Author author){
+    public void execute(Author author) {
         authorRepository.saveAuthor(author);
     }
 }
