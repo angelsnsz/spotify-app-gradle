@@ -9,7 +9,7 @@ public class AuthorMemLocalDataSource {
     private static AuthorMemLocalDataSource instance=null;
     public ArrayList<Author> authorsMemStorage = new ArrayList<>();
 
-    public AuthorMemLocalDataSource() {
+    private AuthorMemLocalDataSource() {
         initData();
     }
 

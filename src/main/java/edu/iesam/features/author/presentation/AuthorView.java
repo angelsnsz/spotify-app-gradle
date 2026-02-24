@@ -1,7 +1,5 @@
 package edu.iesam.features.author.presentation;
 
-import edu.iesam.features.albums.data.AlbumDataRepository;
-import edu.iesam.features.albums.data.AlbumMemLocalDataSource;
 import edu.iesam.features.author.data.AuthorApiLocalDataSource;
 import edu.iesam.features.author.data.AuthorDataRepository;
 import edu.iesam.features.author.data.AuthorMemLocalDataSource;
@@ -30,7 +28,7 @@ public class AuthorView {
         GetAuthorsUseCase getAuthorsUseCase = new GetAuthorsUseCase(
                 new AuthorDataRepository(
                         AuthorMemLocalDataSource.newInstance(),
-                        new AuthorApiLocalDataSource()
+                                    new AuthorApiLocalDataSource()
                 ));
 
         ArrayList<Author> authors =getAuthorsUseCase.execute();
