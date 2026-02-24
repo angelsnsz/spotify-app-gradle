@@ -1,10 +1,10 @@
 package edu.iesam.features.songs.data;
 
 import edu.iesam.features.songs.domain.Song;
-
 import java.util.ArrayList;
 
 public class SongMemLocalDataSource {
+
     private static SongMemLocalDataSource instance = null;
 
     private ArrayList<Song> storage = new ArrayList<>();
@@ -42,4 +42,3 @@ public class SongMemLocalDataSource {
         storage.removeIf(song -> song.getId().equals(id));
     }
 }
-
